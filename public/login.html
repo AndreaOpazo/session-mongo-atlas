@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
+    crossorigin="anonymous"
+  >
+  <script src="index.js" defer></script>
+  <title>Login</title>
+</head>
+<body class="container">
+  <div class="row">
+    <div class="col d-grid my-2 gap-2 col-4 mx-auto text-center bg-dark text-white rounded-3">
+      <h2>Login de usuario</h2>
+      <form action="/login/save" method="POST">
+        <div class="mb-3">
+          <label for="user" class="form-label">Ingrese su nombre</label>
+          <input id="user" type="text" name="user" placeholder="Nombre" />
+        </div>
+        <div class="d-grid my-3 col-4 mx-auto">
+          <button id="session" class="btn btn-success btn-sm">Iniciar sesion</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
