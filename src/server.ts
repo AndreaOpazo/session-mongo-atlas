@@ -5,6 +5,7 @@ import path from "path";
 import { Server }from "socket.io";
 import Utils, { getMessages, updateMessages } from './utils';
 import session, { Session } from 'express-session';
+import connectMongo from 'connect-mongo';
 
 const app = express();
 const router = express.Router();
@@ -13,17 +14,20 @@ const ioServer = new Server(server);
 const port = 8080;
 
 const sessionHandler = session({
+  store: connectMongo.create({
+    mongoUrl: 'mongodb+srv://andy:GoosfrabA08@asi-como-eres-ecommerce.wsgl2.mongodb.net/desafio-25?retryWrites=true&w=majority',
+  }),
   secret: 'secreto',
   resave: true,
   rolling: true,
   saveUninitialized: true,
   cookie: {
-    maxAge: 60 * 1000,
+    maxAge: 10 * 60 * 1000,
   },
 });
 
 server.listen(port, () => {
-  console.log(`Server listening to in port ${port}`);
+  console.log(`Server listening on the port ${port}`);
 });
 
 server.on("error", (error) => {

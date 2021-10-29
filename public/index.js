@@ -19,7 +19,7 @@ if (typeof io === 'function') {
                     <td scope="row">{{this.title}}</td>
                     <td>{{this.price}}</td>
                     <td>
-                      <img src={{this.thumbnail}} width="50rem">
+                      <img width="50rem" src={{this.thumbnail}}>
                     </td>
                   </tr>
                 {{/each}}
